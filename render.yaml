@@ -1,9 +1,12 @@
 services:
   - type: web
     name: frontend-solution
-    env: node
+    runtime: node
     buildCommand: npm install
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
